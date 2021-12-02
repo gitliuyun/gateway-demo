@@ -15,6 +15,12 @@ spring:
           lowerCaseServiceId: true
           filters:
             - StripPrefix=1
+      routes:
+      - id:  path_route12
+        uri: lb://wolf-pay1
+        predicates:
+        - Path=/wolf-pay/trade/record
+        order: -1
 
 logging.level.org.springframework.cloud.gateway: debug
 logging.level.org.springframework.http.server.reactive: debug
